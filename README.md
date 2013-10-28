@@ -128,6 +128,11 @@ reformatted by JSON.sh to allow piping to grep and other text processing tools.
                          of an event, returned in percents in event.percentage
                          in response data.
 
+## ROADMAP ##
+
+TODO: simplify the output of each method, returning only a list of identifiers
+in list.sh scripts? Full details can then be retrieved with read.sh.
+
 TODO: write unit tests to check that each script produces the expected URL,
 by replacing the common function used in all scripts to query the HTTP API,
 checking the value without producing any actual request instead.
