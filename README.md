@@ -139,17 +139,22 @@ checking the value without producing any actual request instead.
 
 ## REFERENCES ##
 
-* [1] SSD Cloud Server, VPS Server, Simple Cloud Hosting by DigitalOcean  
-  https://www.digitalocean.com
+1. [SSD Cloud Server, VPS Server, Simple Cloud Hosting by DigitalOcean]
+   [DigitalOcean]
 
-* [2] DigitalOcean API  
-  https://www.digitalocean.com/api/
+[DigitalOcean]: https://www.digitalocean.com
 
-* [3] JSON.sh - a pipeable JSON parser written in Bash  
-  https://github.com/dominictarr/JSON.sh
+2. [DigitalOcean API][]
 
-* [4] seashell - a Bash client for the DigitalOcean API  
-  https://github.com/jogfsovt/seashell
+[DigitalOcean API]: https://www.digitalocean.com/api/
+
+3. [JSON.sh - a pipeable JSON parser written in Bash][JSON.sh]
+
+[JSON.sh]: https://github.com/dominictarr/JSON.sh
+
+4. [seashell - a Bash client for the DigitalOcean API][seashell]
+
+[seashell]: https://github.com/jogfsovt/seashell
 
 ## AUTHOR ##
 
