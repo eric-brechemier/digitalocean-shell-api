@@ -1,2 +1,5 @@
 # ignore temporary vim files
 *.swp
+
+# ignore changes in config.sh (configuration of user secrets)
+/config.sh
