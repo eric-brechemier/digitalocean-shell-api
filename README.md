@@ -1,7 +1,7 @@
 digitalocean-shell-api
 ======================
 
-Shell scripts acting as client for the DigitalOcean API
+Shell scripts acting as client for the [DigitalOcean API][]
 
 ## LANGUAGE ##
 
@@ -16,9 +16,9 @@ Ubuntu 12.04 LTS
 The Client ID and API Key shall be set in config.sh found at the root
 of this project.
 
-The scripts are organized in folders that map the HTTP API of DigitalOcean,
-with a separate script for each API method. Parameters are provided as
-`key=value` pairs.
+The scripts are organized in folders that map the [HTTP API of DigitalOcean]
+[DigitalOcean API], with a separate script for each API method.
+Parameters are provided as `key=value` pairs.
 
 Each HTTP method returns an object with two properties, 'status' (`OK` or
 `ERROR`) and either property named after the type of the expected result
@@ -31,7 +31,8 @@ The scripts in this shell client set the status code based on the 'status'
 (0 for `OK` and 1 for `ERROR`), which allows to chain commands depending on
 the result of a call, and print only the payload extracted from the result,
 i.e. the value of the other property found in the response, once parsed and
-reformatted by JSON.sh to allow piping to grep and other text processing tools.
+reformatted by [JSON.sh][] to allow piping to grep and other text processing
+tools.
 
 ### /droplets ###
 
