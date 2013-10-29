@@ -212,39 +212,47 @@ is printed to the standard error output.
 ### /regions ###
 
   * `regions/list.sh` - list all geographical regions available
-    + *Input Fields:*
+    + *Input Fields:* any
     + *Output Fields:*
+      - `id` - identifier of the geographical region
+      - `name` - description of the region, e.g. 'New York 1'
 
 ### /images ###
 
-  * `images/list.sh` - list all images available with your client id:
+  * `images/list.sh` - list all images available in your account
                      public images and private snapshots and backups
-    + *Input Fields:*
+    + *Input Fields:* any
     + *Output Fields:*
+      - `id` - identifier of the image (or snapshot or backup)
+      - `name` - description of the image (or snapshot or backup)
+      - `distribution` - name of the OS distribution (e.g. 'Ubuntu')
+      - `public` - whether the image is public or private (`true`|`false`)
 
-  * `images/create.sh name='snapshot1' droplet=42` - create a snapshot of the
-                                                   droplet with id=42 and give
-                                                   it the name 'snapshot1'.
-                                                   When the name is omitted,
-                                                   a name based on current
-                                                   date/time will be assigned.
-                                                 (this script defines an alias
-                                                    for droplets/snapshot.sh)
+  * `images/read.sh` - get the properties of given image
     + *Input Fields:*
+      - `id` - identifier of the image
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the image (or snapshot or backup)
+      - `name` - description of the image (or snapshot or backup)
+      - `distribution` - name of the OS distribution (e.g. 'Ubuntu')
+      - `public` - whether the image is public or private (`true`|`false`)
 
-  * `images/read.sh id=1` - get the properties of image with id=1
+  * `images/delete.sh` - destroy the given image
     + *Input Fields:*
+      - `id` - identifier of the image
+      - optionally followed with any fields
     + *Output Fields:*
+      - None
 
-  * `images/delete.sh id=1` - destroy the image
+  * `images/transfer.sh` - transfer the given image to the selected region  
+    (run regions/list.sh to list all available regions)
     + *Input Fields:*
+      - `id` - identifier of the image
+      - `region_id` - identifier of the geographical region
+      - optionally followed with any fields
     + *Output Fields:*
-
-  * `images/transfer.sh id=1 region=3` - transfer the image to the region with id=3
-                            (run regions/list.sh to list all available regions)
-    + *Input Fields:*
-    + *Output Fields:*
+      - `event_id` - event identifier to track progress of the image transfer
 
 ### /ssh_keys ###
 
