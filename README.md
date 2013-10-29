@@ -29,7 +29,9 @@ progress of a long operation.
 
 Each script in this client reads a list of lines in a tab-separated format
 from the standard input and writes text in the same format to the standard
-output. Lines starting with a '#' are treated as comments and ignored.
+output. Lines starting with a '#' are treated as comments and ignored in the
+input. The first line of output is a comment which lists headers for the
+tabular data.
 
 The exit status of each script is set according to the 'status' in the response
 of the HTTP API: `0` for `OK` and `1` for `ERROR`). This allows to chain
