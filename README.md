@@ -47,27 +47,27 @@ is printed to the standard error output.
       - `name` - name of the droplet, in hostname format
       - `status` - status of the droplet (`active`|...)
       - `locked` - whether the droplet is locked (`true`|`false`)
-      - `backups\_active` - whether daily backups are enabled (`true`|`false`)
-      - `created\_at` - creation date/time in ISO format (UTC)
-      - `size\_id` - identifier of the droplet size (commercial offer)
-      - `image\_id` - identifier of the image
-      - `region\_id` - identifier of geographical region
-      - `ip\_address` - IP address of the droplet
-      - `private\_ip\_address` - private IP address of the droplet
+      - `backups_active` - whether daily backups are enabled (`true`|`false`)
+      - `created_at` - creation date/time in ISO format (UTC)
+      - `size_id` - identifier of the droplet size (commercial offer)
+      - `image_id` - identifier of the image
+      - `region_id` - identifier of geographical region
+      - `ip_address` - IP address of the droplet
+      - `private_ip_address` - private IP address of the droplet
 
   * `droplets/create.sh` - create a new droplet with given properties
     + *Input Fields:*
       - `name` - name of the droplet, in hostname format
-      - `size\_id` - identifier of the droplet size (commercial offer)
-      - `image\_id` - identifier of the image
-      - `region\_id` - identifier of geographical region
-      - optionally followed with `ssh\_key\_ids` - comma-separated list of
+      - `size_id` - identifier of the droplet size (commercial offer)
+      - `image_id` - identifier of the image
+      - `region_id` - identifier of geographical region
+      - optionally followed with `ssh_key_ids` - comma-separated list of
         identifiers of SSH public keys
-      - optionally followed with `private\_networking` - whether to enable
+      - optionally followed with `private_networking` - whether to enable
         private networking, if supported in the region (`true`|`false`)
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of droplet creation
+      - `event_id` - event identifier to track progress of droplet creation
 
   * `droplets/read.sh` - get the properties of the given droplet
     + *Input Fields:*
@@ -78,64 +78,64 @@ is printed to the standard error output.
       - `name` - name of the droplet, in hostname format
       - `status` - status of the droplet (`active`|...)
       - `locked` - whether the droplet is locked (`true`|`false`)
-      - `backups\_active` - whether daily backups are enabled (`true`|`false`)
-      - `created\_at` - creation date/time in ISO format (UTC)
-      - `size\_id` - identifier of the droplet size (commercial offer)
-      - `image\_id` - identifier of the image
-      - `region\_id` - identifier of geographical region
-      - `ip\_address` - IP address of the droplet
-      - `private\_ip\_address` - private IP address of the droplet
+      - `backups_active` - whether daily backups are enabled (`true`|`false`)
+      - `created_at` - creation date/time in ISO format (UTC)
+      - `size_id` - identifier of the droplet size (commercial offer)
+      - `image_id` - identifier of the image
+      - `region_id` - identifier of geographical region
+      - `ip_address` - IP address of the droplet
+      - `private_ip_address` - private IP address of the droplet
 
   * `droplets/reboot.sh` - reboot the given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of reboot
+      - `event_id` - event identifier to track progress of reboot
 
-  * `droplets/power\_cycle.sh` - turn off and on the given droplet
+  * `droplets/power_cycle.sh` - turn off and on the given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of power cycle
+      - `event_id` - event identifier to track progress of power cycle
 
   * `droplets/shutdown.sh` - shutdown the droplet with given identifier
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of shutdown
+      - `event_id` - event identifier to track progress of shutdown
 
-  * `droplets/power\_off.sh` - turn off the given droplet
+  * `droplets/power_off.sh` - turn off the given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of power off operation
+      - `event_id` - event identifier to track progress of power off operation
 
-  * `droplets/power\_on.sh` - turn on the given droplet
+  * `droplets/power_on.sh` - turn on the given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of power on operation
+      - `event_id` - event identifier to track progress of power on operation
 
-  * `droplets/password\_reset.sh` - reset the root password of given droplet
+  * `droplets/password_reset.sh` - reset the root password of given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - identifier of event for password reset operation
+      - `event_id` - identifier of event for password reset operation
 
   * `droplets/resize.sh` - change the given droplet to selected size  
     (run `sizes/list.sh` to get the list of available sizes)
     + *Input Fields:*
       - `id` - identifier of the droplet
-      - `size\_id` - identifier of the new size (commercial offer)
+      - `size_id` - identifier of the new size (commercial offer)
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - identifier of event for resizing operation
+      - `event_id` - identifier of event for resizing operation
 
   * `droplets/snapshots/list.sh` - get the list of snapshots of given droplet
     + *Input Fields:*
@@ -153,16 +153,16 @@ is printed to the standard error output.
       - optionally followed with `name` - name of the snapshot
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of snapshot creation
+      - `event_id` - event identifier to track progress of snapshot creation
 
   * `droplets/restore.sh` - restore the given droplet using selected image  
     (run images/list.sh to get the list of available images)
     + *Input Fields:*
       - `id` - identifier of the droplet
-      - `image\_id` - identifier of the image (or snapshot or backup)
+      - `image_id` - identifier of the image (or snapshot or backup)
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of droplet restoration
+      - `event_id` - event identifier to track progress of droplet restoration
 
   * `droplets/rebuild.sh` - reset the given droplet to the initial image  
     (restart from scratch with the same IP)
@@ -170,7 +170,7 @@ is printed to the standard error output.
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of rebuild operation
+      - `event_id` - event identifier to track progress of rebuild operation
 
   * droplets/backups/list.sh - get the list of backups for given droplet
     + *Input Fields:*
@@ -180,19 +180,19 @@ is printed to the standard error output.
       - `id` - identifier of the backup image
       - `name` - description of the backup image, e.g. 'Automated Backup'
 
-  * `droplets/enable\_backups.sh` - enable daily backups of given droplet
+  * `droplets/enable_backups.sh` - enable daily backups of given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of backup activation
+      - `event_id` - event identifier to track progress of backup activation
 
-  * `droplets/disable\_backups.sh` - disable daily backups of the given droplet
+  * `droplets/disable_backups.sh` - disable daily backups of the given droplet
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of backup deactivation
+      - `event_id` - event identifier to track progress of backup deactivation
 
   * `droplets/rename.sh` - rename the given droplet
     + *Input Fields:*
@@ -200,14 +200,14 @@ is printed to the standard error output.
       - `name` - new name of the droplet, in hostname format
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of droplet renaming
+      - `event_id` - event identifier to track progress of droplet renaming
 
   * `droplets/delete.sh` - destroy the given droplet (this is irreversible)
     + *Input Fields:*
       - `id` - identifier of the droplet
       - optionally followed with any fields
     + *Output Fields:*
-      - `event\_id` - event identifier to track progress of droplet destruction
+      - `event_id` - event identifier to track progress of droplet destruction
 
 ### /regions ###
 
@@ -246,26 +246,26 @@ is printed to the standard error output.
     + *Input Fields:*
     + *Output Fields:*
 
-### /ssh\_keys ###
+### /ssh_keys ###
 
-  * `ssh\_keys/list.sh` - list all SSH public keys associated with your account
+  * `ssh_keys/list.sh` - list all SSH public keys associated with your account
     + *Input Fields:*
     + *Output Fields:*
 
-  * `ssh\_keys/add.sh name='example.org' key='...'` - add the given SSH public key
+  * `ssh_keys/add.sh name='example.org' key='...'` - add the given SSH public key
                                                     with the name 'example.org'
     + *Input Fields:*
     + *Output Fields:*
 
-  * `ssh\_keys/read.sh id=42` - get the properties of the SSH public key with id=42
+  * `ssh_keys/read.sh id=42` - get the properties of the SSH public key with id=42
     + *Input Fields:*
     + *Output Fields:*
 
-  * `ssh\_keys/update.sh id=42 key='...'` - update the SSH public key
+  * `ssh_keys/update.sh id=42 key='...'` - update the SSH public key
     + *Input Fields:*
     + *Output Fields:*
 
-  * `ssh\_keys/remove.sh id=42` - remove the SSH public key from the account
+  * `ssh_keys/remove.sh id=42` - remove the SSH public key from the account
     + *Input Fields:*
     + *Output Fields:*
 
