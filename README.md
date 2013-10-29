@@ -43,17 +43,17 @@ is printed to the standard error output.
   * `droplets/list.sh` - list all active droplets
     - *Input Fields:* any
     - *Output Fields*
-      o id - droplet identifier
-      o name - name of the droplet
-      o status - status of the droplet (`active`|...)
-      o created\_at - creation date/time in ISO format (UTC)
-      o image\_id - identifier of the image
-      o size\_id - identifier of the droplet size (commercial offer)
-      o region\_id - identifier of geographical region
-      o ip\_address - IP address of the droplet
-      o private\_ip\_address - private IP address of the droplet
-      o backups\_active - whether daily backups are enabled (`true`|`false`)
-      o locked - whether the droplet is locked (`true`|`false`)
+        o id - droplet identifier
+        o name - name of the droplet
+        o status - status of the droplet (`active`|...)
+        o created\_at - creation date/time in ISO format (UTC)
+        o image\_id - identifier of the image
+        o size\_id - identifier of the droplet size (commercial offer)
+        o region\_id - identifier of geographical region
+        o ip\_address - IP address of the droplet
+        o private\_ip\_address - private IP address of the droplet
+        o backups\_active - whether daily backups are enabled (`true`|`false`)
+        o locked - whether the droplet is locked (`true`|`false`)
 
   * `droplets/create.sh` - create a new droplet
   * `droplets/read.sh id=42` - get the properties of the droplet with id=42
