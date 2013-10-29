@@ -303,8 +303,15 @@ is printed to the standard error output.
 ### /sizes ###
 
   * `sizes/list.sh` - list all droplet sizes available (commercial offers)
-    + *Input Fields:*
+    + *Input Fields:* any
     + *Output Fields:*
+      - `id` - identifier of the size (commercial offer)
+      - `name` - description of the size, e.g. '512MB'
+      - `memory` - RAM in megabytes (e.g. '1024' for 1GB)
+      - `cpu` - number of CPU cores
+      - `disk` - SSD disk space in gigabytes
+      - `cost_per_hour` - cost per hour in dollars (floating point number)
+      - `cost_per_month` - cost per month in dollars (floating point number)
 
 ### /domains ###
 
