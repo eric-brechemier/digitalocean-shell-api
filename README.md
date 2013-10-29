@@ -29,7 +29,7 @@ progress of a long operation.
 
 Each script in this client reads a list of lines in a tab-separated format
 from the standard input and writes text in the same format to the standard
-output.
+output. Lines starting with a '#' are treated as comments and ignored.
 
 The exit status of each script is set according to the 'status' in the response
 of the HTTP API: `0` for `OK` and `1` for `ERROR`). This allows to chain
