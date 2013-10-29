@@ -439,12 +439,16 @@ is printed to the standard error output.
 
 ### /events ###
 
-  * `events/read.sh id=42` - get the properties of the event with id=42.
-                         This method is useful to track the progression
-                         of an event, returned in percents in event.percentage
-                         in response data.
+  * `events/read.sh` - get the properties of the given event
     + *Input Fields:*
+      - `id` - event identifier
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - event identifier
+      - 'percentage' - operation progress in percents
+      - 'action_status' - status of the operation (`done`|...)
+      - 'droplet_id' - identifier of the affected droplet
+      - 'event_type_id' - identifier of the event type, undocumented
 
 ## ROADMAP ##
 
