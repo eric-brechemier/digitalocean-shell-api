@@ -11,10 +11,33 @@ Shell (dash)
 
 Ubuntu 12.04 LTS
 
-## USAGE ##
+## DEPENDENCIES ##
 
-The Client ID and API Key shall be set in config.sh found at the root
-of this project.
+* curl (installed with `setup/install.sh`, removed with `setup/uninstall.sh`)
+* [JSON.sh][] (installed as a git submodule)
+
+## FIRST STEPS ##
+
+    # Initialize git submodules
+    git submodule init
+    git submodule update
+
+    # Install dependencies
+    ./setup/install.sh
+
+Login to your account on DigitalOcean.com and copy the Client ID and API Key
+that you find there to initialize the corresponding variables in config.sh at
+the root of this project:
+
+    # Configuration of Identification for DigitalOcean API
+
+    # Client ID
+    CLIENT_ID=
+
+    # API Key
+    API_KEY=
+
+## USAGE ##
 
 The scripts are organized in folders that map the [HTTP API of DigitalOcean]
 [DigitalOcean API], with a separate script for each API method.
