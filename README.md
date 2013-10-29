@@ -257,25 +257,47 @@ is printed to the standard error output.
 ### /ssh_keys ###
 
   * `ssh_keys/list.sh` - list all SSH public keys associated with your account
-    + *Input Fields:*
+    + *Input Fields:* any
     + *Output Fields:*
+      - `id` - identifier of the SSH public key
+      - `name` - your description of the key
 
-  * `ssh_keys/add.sh name='example.org' key='...'` - add the given SSH public key
-                                                    with the name 'example.org'
+  * `ssh_keys/add.sh` - add the given SSH public key to your account
     + *Input Fields:*
+      - `id` - identifier of the SSH public key
+      - `name` - description of the key
+      - `ssh_pub_key` - the full text of the SSH public key
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the SSH public key
+      - `name` - description of the key
+      - `ssh_pub_key` - the full text of the SSH public key
 
-  * `ssh_keys/read.sh id=42` - get the properties of the SSH public key with id=42
+  * `ssh_keys/read.sh` - get the properties of the given SSH public key
     + *Input Fields:*
+      - `id` - identifier of the SSH public key
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the SSH public key
+      - `name` - description of the key
+      - `ssh_pub_key` - the full text of the SSH public key
 
-  * `ssh_keys/update.sh id=42 key='...'` - update the SSH public key
+  * `ssh_keys/update.sh` - update the given SSH public key
     + *Input Fields:*
+      - `id` - identifier of the SSH public key
+      - `ssh_pub_key` - the updated full text of the SSH public key
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the SSH public key
+      - `name` - description of the key
+      - `ssh_pub_key` - the full text of the SSH public key
 
-  * `ssh_keys/remove.sh id=42` - remove the SSH public key from the account
+  * `ssh_keys/remove.sh` - remove the given SSH public key from the account
     + *Input Fields:*
+      - `id` - identifier of the SSH public key
+      - optionally followed with any fields
     + *Output Fields:*
+      - None
 
 ### /sizes ###
 
