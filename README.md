@@ -13,7 +13,8 @@ Ubuntu 12.04 LTS
 
 ## DEPENDENCIES ##
 
-* curl (installed with `setup/install.sh`, removed with `setup/uninstall.sh`)
+* [curl][] (installed with `setup/install.sh`,
+            removed with `setup/uninstall.sh`)
 * [JSON.sh][] (installed as a git submodule)
 
 ## FIRST STEPS ##
@@ -489,6 +490,8 @@ checking the value without producing any actual request instead.
 2. [DigitalOcean API][]
 
 [DigitalOcean API]: https://www.digitalocean.com/api/
+
+[curl]: http://curl.haxx.se/
 
 3. [JSON.sh - a pipeable JSON parser written in Bash][JSON.sh]
 
