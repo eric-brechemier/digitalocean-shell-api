@@ -315,55 +315,127 @@ is printed to the standard error output.
 
 ### /domains ###
 
-  * `domains/list.sh` - list all domain names registered in the account
-    + *Input Fields:*
+  * `domains/list.sh` - list all domains registered in the account
+    + *Input Fields:* any
     + *Output Fields:*
+      - `id` - identifier of the domain
+      - `name` - domain name, in hostname format
 
-  * `domains/add.sh name='example.org' ip='1.2.3.4'` - add domain 'example.org'
-                                                   and create an A record for
-                                                   the IP address '1.2.3.4'
+  * `domains/add.sh` - add a DNS A record for given domain
     + *Input Fields:*
+      - `name` - domain name, in hostname format
+      - `ip_address` - IPv4 address for the new A record
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the domain name
+      - `name` - domain name, in hostname format
 
-  * `domains/read.sh id=42` - get the properties of the domain with id=42
+  * `domains/read.sh` - get the properties of the given domain
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the domain
+      - `name` - domain name, in hostname format
+      - `ttl` - time to live, undocumented
+      - `live_zone_file` - escaped text of the zone file, undocumented
+      - `error` - undocumented
+      - `zone_file_with_error` - undocumented
 
-  * `domains/remove.sh id=42` - remove the domain from the account 
+  * `domains/remove.sh` - remove the given domain from the account
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - optionally followed with any fields
     + *Output Fields:*
+      - None
 
-  * `domains/records/list.sh domain=42` - list all DNS records for the domain id=42
+  * `domains/records/list.sh` - list all DNS records for the given domain
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the domain
+      - `record_id` - identifier of the DNS record
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - `data` - value of the DNS record
+      - `name` - name of the subdomain, in hostname format (may be empty)
+      - `priority` - priority (integer or empty)
+      - `port` - port (integer or empty)
+      - `weight` - weight (integer or empty)
 
-  * `domains/records/add.sh domain=42 type='A' data='1.2.3.4'` -
-                            add a custom DNS record for the domain.
-                            Supported types are 'A', 'CNAME', 'NS', 'TXT',
-                            'MX' and 'SRV'. The value of the record is provided
-                            in property 'data'. Three additional parameters
-                            can be provided: 'priority' (required for 'SRV'
-                            and 'MX' records), 'port' (required for 'SRV'
-                            records) and 'weight' (required for 'SRV' records).
+  * `domains/records/add.sh` - add a DNS record for given domain
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - `data` - value of the DNS record
+      - optionally followed with `name` - name of the subdomain, in hostname
+        format, required for record types `A`, `CNAME`, `TXT` and `SRV`,
+        may be left empty for other types of records
+      - optionally followed with `priority` - priority (integer), required for
+        `MX` and `SRV` records, may be left empty for other types of records
+      - optionally followed with `port` - port (integer), required for `SRV`
+        records, may be left empty for other types of records
+      - optionally followed with `weight` - weight (integer), required for
+        `SRV` records, may be left empty for other types of records
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the domain
+      - `record_id` - identifier of the DNS record
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - `data` - value of the DNS record
+      - `name` - name of the subdomain, in hostname format (may be empty)
+      - `priority` - priority (integer or empty)
+      - `port` - port (integer or empty)
+      - `weight` - weight (integer or empty)
 
-  * `domains/records/read.sh domain=42 record=1` - get the properties of the record
-                                               with id=1 for the domain id=42
+  * `domains/records/read.sh` - get the properties of the given domain/record
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the domain
+      - `record_id` - identifier of the DNS record
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - `data` - value of the DNS record
+      - `name` - name of the subdomain, in hostname format (may be empty)
+      - `priority` - priority (integer or empty)
+      - `port` - port (integer or empty)
+      - `weight` - weight (integer or empty)
 
-  * `domains/records/update.sh domain=42 record=1 type='A' data='1.2.3.4'` -
-                                update the properties of the DNS record id=1
-                                for the domain id=42. The same parameters as
-                                `domains/records/add.sh` are supported here.
+  * `domains/records/update.sh` - update the given domain/record
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - `record_id` - identifier of the DNS record
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - `data` - value of the DNS record
+      - optionally followed with `name` - name of the subdomain, in hostname
+        format, required for record types `A`, `CNAME`, `TXT` and `SRV`,
+        may be left empty for other types of records
+      - optionally followed with `priority` - priority (integer), required for
+        `MX` and `SRV` records, may be left empty for other types of records
+      - optionally followed with `port` - port (integer), required for `SRV`
+        records, may be left empty for other types of records
+      - optionally followed with `weight` - weight (integer), required for
+        `SRV` records, may be left empty for other types of records
+      - optionally followed with any fields
     + *Output Fields:*
+      - `id` - identifier of the domain
+      - `record_id` - identifier of the DNS record
+      - `record_type` - DNS record type (`A`|`CNAME`|`NS`|`TXT`|`MX`|`SRV`)
+      - `data` - value of the DNS record
+      - `name` - name of the subdomain, in hostname format (may be empty)
+      - `priority` - priority (integer or empty)
+      - `port` - port (integer or empty)
+      - `weight` - weight (integer or empty)
 
-  * `domains/records/remove.sh domain=42 record=1` - remove the record with id=1
-                                                     for the domain id=42
+  * `domains/records/remove.sh` - remove the given DNS record of given domain
     + *Input Fields:*
+      - `id` - identifier of the domain name
+      - `record_id` - identifier of the DNS record
+      - optionally followed with any fields
     + *Output Fields:*
+      - None
 
 ### /events ###
 
