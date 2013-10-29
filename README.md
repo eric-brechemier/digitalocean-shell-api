@@ -41,6 +41,13 @@ is printed to the standard error output.
 ### /droplets ###
 
   * `droplets/list.sh` - list all active droplets
+    - *Input Fields:* any
+    - *Output Fields:*
+        id, status, name,
+        image\_id, size\_id, region\_id, created\_at,
+        ip\_address, private\_ip\_address,
+        backups\_active, locked
+
   * `droplets/create.sh` - create a new droplet
   * `droplets/read.sh id=42` - get the properties of the droplet with id=42
   * `droplets/reboot.sh id=42` - reboot the droplet
