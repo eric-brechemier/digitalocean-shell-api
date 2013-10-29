@@ -19,11 +19,7 @@ Ubuntu 12.04 LTS
 
 ## FIRST STEPS ##
 
-    # Initialize git submodules
-    git submodule init
-    git submodule update
-
-    # Install dependencies
+    # Install dependencies and initialize git submodules
     ./setup/install.sh
 
 Login to your account on DigitalOcean.com and copy the Client ID and API Key
