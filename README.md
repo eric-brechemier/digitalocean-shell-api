@@ -285,6 +285,7 @@ is printed to the standard error output.
   * `ssh_keys/update.sh` - update the given SSH public key
     + *Input Fields:*
       - `id` - identifier of the SSH public key
+      - `name` - description of the key (ignored?)
       - `ssh_pub_key` - the updated full text of the SSH public key
       - optionally followed with any fields
     + *Output Fields:*
