@@ -19,12 +19,11 @@ Ubuntu 12.04 LTS
 
 ## FIRST STEPS ##
 
-    # Install dependencies and initialize git submodules
-    ./setup/install.sh
+Run the script `setup/install.sh` to install dependencies and
+create the configuration file 'config.sh' at the root of the project.
 
 Login to your account on DigitalOcean.com and copy the Client ID and API Key
-that you find there to initialize the corresponding variables in config.sh at
-the root of this project:
+that you find there to initialize the corresponding variables in 'config.sh':
 
     # Configuration of Identification for DigitalOcean API
 
