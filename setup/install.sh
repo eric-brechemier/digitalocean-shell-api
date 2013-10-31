@@ -17,8 +17,8 @@ cat << EOF | tee config.sh
 # Configuration of Identification for DigitalOcean API
 
 # Client ID
-CLIENT_ID=
+clientId=
 
 # API Key
-API_KEY=
+apiKey=
 EOF

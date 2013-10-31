@@ -28,10 +28,10 @@ that you find there to initialize the corresponding variables in 'config.sh':
     # Configuration of Identification for DigitalOcean API
 
     # Client ID
-    CLIENT_ID=
+    clientId=
 
     # API Key
-    API_KEY=
+    apiKey=
 
 ## USAGE ##
 
